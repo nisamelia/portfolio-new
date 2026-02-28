@@ -2,39 +2,67 @@ interface Props {
   title: string
   description: string
   tech?: string[]
+  image?: string
   onClose: () => void
 }
 
-const ProjectModal = ({ title, description, tech, onClose }: Props) => {
+const ProjectModal = ({
+  title,
+  description,
+  tech,
+  image,
+  onClose
+}: Props) => {
   return (
-    <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
-      <div className="bg-zinc-900 p-8 rounded-xl max-w-lg w-full">
+    <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-6">
 
-        <h3 className="text-2xl font-bold mb-4">{title}</h3>
+      {/* Modal Container */}
+      <div className="relative bg-zinc-900 rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto modal-scroll shadow-2xl">
 
-        <p className="text-gray-400 mb-6">{description}</p>
-
-        {/* ✅ Tech Stack Section */}
-        {tech && (
-          <div className="flex flex-wrap gap-2 mb-6">
-            {tech.map((item, i) => (
-              <span
-                key={i}
-                className="bg-zinc-800 text-sm px-3 py-1 rounded-full"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
-        )}
-
+        {/* Close Button */}
         <button
           onClick={onClose}
-          className="bg-white text-black px-4 py-2 rounded-lg"
+          className="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl"
         >
-          Close
+          ✕
         </button>
 
+        <div className="p-8">
+
+          {/* Title */}
+          <h3 className="text-3xl font-bold mb-6">{title}</h3>
+
+          {/* Image Section */}
+          {image && (
+            <div className="mb-6 flex justify-center bg-zinc-900/90 rounded-xl p-4">
+              <img
+                src={image}
+                alt={title}
+                className="max-h-[60vh] w-auto object-contain"
+              />
+            </div>
+          )}
+
+          {/* Description */}
+          <p className="text-gray-400 mb-6 leading-relaxed">
+            {description}
+          </p>
+
+          {/* Tech Stack */}
+          {tech && (
+            <div className="flex flex-wrap gap-2 mb-6">
+              {tech.map((item, i) => (
+                <span
+                  key={i}
+                  className="bg-zinc-800 text-sm px-3 py-1 rounded-full"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          )}
+
+        </div>
       </div>
     </div>
   )
