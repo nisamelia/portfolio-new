@@ -2,47 +2,69 @@ import { useState } from "react"
 import ProjectCard from "../components/ProjectCard"
 import ProjectModal from "../components/ProjectModal"
 import { projects } from "../data/data"
+import type { Project, Category } from "../types/types"
+
+const categories: Category[] = [
+  "All",
+  "Data Science",
+  "Web and Application",
+  "GIS and Remote Sensing",
+]
 
 const Projects = () => {
-  const [selected, setSelected] = useState<null | {
-    id: number
-    title: string
-    description: string
-    image: string
-  }>(null)
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+  const [selectedCategory, setSelectedCategory] =
+    useState<Category>("All")
 
-  // const projects = [
-  //   {
-  //     title: "Land Use Change Detection",
-  //     description: "SMA analysis using Landsat in Google Earth Engine."
-  //   },
-  //   {
-  //     title: "POI QC Automation Tool",
-  //     description: "Python automation for cleaning and validating POI data."
-  //   }
-  // ]
+  const filteredProjects =
+    selectedCategory === "All"
+      ? projects
+      : projects.filter(
+          (project) => project.category === selectedCategory
+        )
 
   return (
     <section className="pt-32 pb-20 px-6 max-w-6xl mx-auto">
-      <h2 className="text-3xl font-bold mb-10">Projects</h2>
+
+      {/* Category Filter */}
+      <div className="flex flex-wrap gap-4 mb-10">
+        {categories.map((category) => (
+          <button
+            key={category}
+            onClick={() => setSelectedCategory(category)}
+            className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300
+              ${
+                selectedCategory === category
+                  ? "bg-white text-black"
+                  : "bg-zinc-800 text-zinc-400 hover:bg-zinc-700 hover:text-white"
+              }
+            `}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
+
+      {/* Project Grid */}
       <div className="grid md:grid-cols-2 gap-6">
-        {projects.map((project) => (
+        {filteredProjects.map((project) => (
           <ProjectCard
             key={project.id}
             title={project.title}
             description={project.description}
             image={project.image}
-            onClick={() => setSelected(project)}
+            onClick={() => setSelectedProject(project)}
           />
         ))}
       </div>
 
-      {selected && (
+      {/* Modal */}
+      {selectedProject && (
         <ProjectModal
-          title={selected.title}
-          description={selected.description}
-          image={selected.image}
-          onClose={() => setSelected(null)}
+          title={selectedProject.title}
+          description={selectedProject.description}
+          image={selectedProject.image}
+          onClose={() => setSelectedProject(null)}
         />
       )}
     </section>
