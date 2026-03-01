@@ -52,7 +52,8 @@ const Projects = () => {
             key={project.id}
             title={project.title}
             description={project.description}
-            image={project.image}
+            tools={project.tools}
+            images={project.images}
             onClick={() => setSelectedProject(project)}
           />
         ))}
@@ -63,7 +64,9 @@ const Projects = () => {
         <ProjectModal
           title={selectedProject.title}
           description={selectedProject.description}
-          image={selectedProject.image}
+          images={selectedProject.images}
+          tools={selectedProject.tools}
+          links={selectedProject.links}
           onClose={() => setSelectedProject(null)}
         />
       )}
