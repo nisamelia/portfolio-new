@@ -100,13 +100,13 @@ The result visualizes spatial variations in water clarity to support reservoir w
     category: "GIS and Remote Sensing",
     tools: ["GEE", "Total Solid Suspense", "Environment", "Sentinel-2"],
     links: [{
-        label: "Google Earth Engine",
-        url: "https://code.earthengine.google.com/39bbf4bf7a93c69d97c3f80c50986d56",
-        type: "gee"
-      },]
+      label: "Google Earth Engine",
+      url: "https://code.earthengine.google.com/39bbf4bf7a93c69d97c3f80c50986d56",
+      type: "gee"
+    },]
   },
 
-    {
+  {
     id: 6,
     title: "Archaeosite Mobile App - Yogyakarta Special Region",
     description: `
@@ -122,44 +122,122 @@ It also supports user-contributed data input, allowing users to add new archaeol
     category: "Web and Application",
     tools: ["React Native", "Javascript", "Mobile App", "Leaflet JS", "Bootstrap"],
     links: [{
+      label: "GitHub",
+      url: "https://github.com/nisamelia/archaeo-sites-3",
+      type: "github"
+    },]
+  },
+  {
+    id: 7,
+    title: "Gesturo – Bangkit Capstone Project",
+    description: `
+Gesturo is a sign language learning mobile application developed using Kotlin in Android Studio, with UI/UX designed in Figma.
+
+Built as a collaborative capstone project, the app integrates machine learning models for real-time gesture recognition and utilizes cloud computing services for model deployment and data processing.
+
+The development was carried out in cross-functional collaboration with Machine Learning and Cloud Computing cohorts to deliver an intelligent, scalable, and accessible learning platform.
+`,
+    images: [
+      "/images/projects/gesturo.png",
+    ],
+    category: "Web and Application",
+    tools: ["Kotlin", "Android Studio", "Figma", "Machine Learning"],
+    links: [
+      {
         label: "GitHub",
-        url: "https://github.com/nisamelia/archaeo-sites-3",
+        url: "https://github.com/gesturo-team/Mobile-Development",
         type: "github"
-      },]
+      },
+    ]
+  },
+
+  {
+    id: 8,
+    title: "SentiMapJogja – Tourism Sentiment Analysis Dashboard",
+    description: `
+SentiMapJogja is an undergraduate thesis project focused on mapping public sentiment toward tourism destinations in the Special Region of Yogyakarta (2023) using Twitter data.
+
+The project was developed using Python and visualized through an interactive Streamlit dashboard. A lexicon-based sentiment analysis approach was applied to more than 25,000 collected tweets, resulting in 2,685 cleaned and processed data points for final analysis.
+
+The platform presents sentiment distribution and spatial insights to support data-driven understanding of tourism perception in the region.
+`,
+    images: [
+      "/images/projects/python-sentimap.png",
+    ],
+    category: "Data Science",
+    tools: ["Python", "Streamlit", "Sentiment Analysis", "Lexicon-Based Method", "Data Mining"],
+    links: [
+      {
+        label: "Streamlit",
+        url: "https://sentimenspasialwisatadiy2023.streamlit.app/",
+        type: "streamlit"
+      }
+    ]
+  },
+
+  {
+    id: 9,
+    title: "Retail Expansion Analysis – OKU vs South Tangerang",
+    description: `
+This project analyzes retail expansion potential between Ogan Komering Ulu (OKU) Regency and South Tangerang City using a grid-based spatial approach as the core analytical framework.
+
+Multiple geospatial datasets were integrated, including World Settlement Footprint (WSF), OpenStreetMap (OSM) building data, Google Earth Engine catalog imagery, official RTRW spatial plans (South Tangerang via geoportal and OKU digitized from published maps), Ina-Geoportal road data, and BPS population statistics. A dasymetric mapping technique was applied to redistribute population data using building footprints and NDBI to produce a more realistic population density surface.
+
+The suitability model incorporates key parameters such as flood risk, road buffer accessibility, built-up intensity, and compliance with local spatial planning regulations, resulting in a spatially explicit retail potential map to support location-based decision-making.
+`,
+    images: [
+      "/images/projects/python-retailexp.png",
+    ],
+    category: "Data Science",
+    tools: [
+      "Data Science",
+      "Python",
+      "Streamlit",
+      "Spatial Analysis",
+      "Dasymetric Mapping",
+      "NDBI",
+      "Multi-Criteria Analysis"
+    ],
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/nisamelia/retail-expansion",
+        type: "github"
+      },
+      {
+        label: "Streamlit",
+        url: "https://nisa-retail-analysis.streamlit.app/",
+        type: "streamlit"
+      }
+    ]
   }
 ]
 
 export const galleryData: GalleryItem[] = [
   {
     id: 1,
-    image: "/images/projects/arcgis-airtanah.png",
-    title: "Land Cover Change Analysis",
-    date: "January 2024"
+    image: "/images/gallery/sakala.png",
+    title: "(ง •̀_•́)ง Dassa Internship",
+    date: "December 2025"
   },
   {
     id: 2,
-    image: "/images/projects/arcgis-airtanah.png",
-    title: "WebGIS Dashboard Development",
-    date: "March 2024"
+    image: "/images/gallery/sakala_2.JPG",
+    title: "(ﾉ◕ヮ◕)ﾉ MRV Platform Launch",
+    date: "December 2025"
   },
   {
     id: 3,
-    image: "/images/projects/arcgis-airtanah.png",
-    title: "POI Data Cleaning Automation",
-    date: "June 2024"
+    image: "/images/gallery/kkn.png",
+    title: "(づ｡◕‿‿◕｡)づ Community Service – Demak",
+    date: "July 2024"
   },
   {
     id: 4,
-    image: "/images/projects/arcgis-airtanah.png",
-    title: "POI Data Cleaning Automation",
-    date: "June 2024"
+    image: "/images/gallery/bangkit.png",
+    title: "(•̀ᴗ•́)و Bangkit Capstone Project",
+    date: "April 2024"
   },
-  {
-    id: 5,
-    image: "/images/projects/arcgis-airtanah.png",
-    title: "POI Data Cleaning Automation",
-    date: "June 2024"
-  }
 ]
 
 export interface Experience {
@@ -169,43 +247,88 @@ export interface Experience {
   period: string
   tools: string[]
   description: string[]
+  location: string
 }
 
 export const experiences: Experience[] = [
   {
     id: 1,
-    role: "Software Developer Intern (MRV)",
-    company: "Carbon Project Organization",
-    period: "2024",
+    role: "Software Developer Intern",
+    company: "Dassa Corp",
+    period: "Sep - Dec 2025",
+    location: "Central Jakarta, Indonesia",
     tools: [
       "React",
       "TypeScript",
-      "Node.js",
-      "PostgreSQL",
-      "REST API"
+      "MapLibre",
+      "GeoJson",
+      "KML",
+      "Teamwork",
+      "Creativity and Inovation",
+      "UAT",
+      "Manual Testing"
     ],
     description: [
-      "Developed features for Monitoring, Reporting, and Verification (MRV) system.",
-      "Implemented validation workflows and reporting modules.",
-      "Collaborated with cross-functional teams for carbon project tracking."
+      "Bridged carbon project documentation and MRV system for carbon project implementation by translating project design and monitoring requirements into GIS-based MRV features.",
+      "Designed and executed basic QA test cases for MRV features, including functional testing of map layers, spatial data validation, and end-to-end user workflows",
+    ]
+  },
+  {
+    id: 4,
+    role: "Teaching Assistant – Geospatial Data Science Practicum",
+    company: "Universitas Gadjah Mada (Department of Earth Science – Vocational School)",
+    location: "Yogyakarta, Indonesia",
+    period: "Feb - Jun 2025",
+    tools: [
+      "GDAL/OGR (CLI & Python)",
+      "Python",
+      "Google Earth Engine",
+      "Geemap",
+      "Remote Sensing",
+      "Spatial Analysis"
+    ],
+    description: [
+      "Provided technical and academic assistance to 74 students across 12 laboratory sessions throughout the semester.",
+      "Facilitated hands-on exercises in geospatial data processing using GDAL/OGR (CLI & Python) and geospatial data science workflows in Python.",
+      "Guided practical sessions on image transformation, supervised and unsupervised classification, OBIA, SMA, change detection analysis, and regression modeling in Google Earth Engine."
     ]
   },
   {
     id: 2,
-    role: "WebGIS Developer Intern",
-    company: "Geospatial Lab",
-    period: "2023",
+    role: "Geographic Information System Intern",
+    company: "Regional Development Planning Agency (Bappeda) – Special Region of Yogyakarta",
+    period: "Sep - Dec 2024",
+    location: "Yogyakarta, Indonesia",
     tools: [
-      "React",
-      "Leaflet",
-      "GeoJSON",
-      "PostGIS",
-      "Google Earth Engine"
+      "ArcGIS Pro",
+      "ArcGIS Enterprise",
+      "Geocoding",
+      "Spatial Data Management"
     ],
     description: [
-      "Built interactive WebGIS applications.",
-      "Integrated spatial datasets and optimized map performance.",
-      "Automated spatial data validation workflows."
+      "Collected and validated 2,000+ coordinate points of public facilities, performed geocoding, and transformed 100+ tabular datasets into structured spatial data to enhance regional geospatial databases.",
+      "Digitized 14 official geoheritage sites across the Special Region of Yogyakarta and developed interactive dashboards using ArcGIS Enterprise for dynamic spatial data visualization.",
+      "Built and optimized WebGIS applications by integrating multi-source spatial datasets and improving map performance and usability.",
+      "Participated in the preparation of spatial data presentations and materials for the Bhumandala Award representation of the Special Region of Yogyakarta."
+    ]
+  },
+  {
+    id: 3,
+    role: "Geographic Information System Operator",
+    company: "Inderaja Teknik Indonesia",
+    location: "Yogyakarta, Indonesia",
+    period: "Jan - Feb 2024",
+    tools: [
+      "Agisoft Metashape",
+      "Photogrammetry",
+      "Aerial Survey Processing",
+      "GIS Mapping",
+      "Mobile App Development"
+    ],
+    description: [
+      "Processed aerial photographs using Agisoft Metashape to generate orthomosaics and spatial outputs from aerial survey data.",
+      "Designed and produced comprehensive map layouts to effectively visualize geospatial information derived from processed imagery.",
+      "Developed a mobile application (Logbook Surveyor) to streamline and digitize field survey logbook documentation, improving reporting efficiency."
     ]
   }
 ]
