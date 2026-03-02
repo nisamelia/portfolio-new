@@ -291,6 +291,7 @@ export const experiences: Experience[] = [
       "React",
       "TypeScript",
       "MapLibre",
+      "Git",
       "GeoJson",
       "KML",
       "Teamwork",
