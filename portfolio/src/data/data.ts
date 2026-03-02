@@ -210,7 +210,67 @@ The suitability model incorporates key parameters such as flood risk, road buffe
         type: "streamlit"
       }
     ]
-  }
+  },
+
+  {
+  id: 10,
+  title: "WebGIS – Restaurant Distribution Map of East Java",
+  description: `
+This project is an interactive WebGIS application designed to visualize the spatial distribution of restaurants across East Java.
+
+The system integrates geospatial mapping, tabular data management, and dashboard visualization, enabling users to explore restaurant locations, view attribute information, and manage data entries dynamically. The platform includes interactive maps, statistical charts, and a structured database table interface.
+
+Built as a full-stack geospatial web application, it demonstrates spatial data visualization, CRUD functionality, and web-based GIS implementation for regional-level analysis.
+`,
+  images: [
+    "/images/projects/webgis-makmur.png"
+  ],
+  category: "Web and Application",
+  tools: [
+    "Leaflet",
+    "PHP",
+    "Bootstrap",
+    "PostGIS",
+    "CodeIgniter",
+    "WebGIS Development"
+  ],
+  links: [
+          {
+        label: "GitHub",
+        url: "https://github.com/nisamelia/RM-Jawa-Timur",
+        type: "github"
+      },
+  ]
+},
+{
+  id: 11,
+  title: "Global COVID-19 Confirmed Cases Dashboard (2020)",
+  description: `
+This project presents a global visualization dashboard of confirmed COVID-19 cases in 2020 using multiple thematic and statistical mapping techniques.
+
+The dashboard includes treemap charts, choropleth maps, proportional symbol maps, packed bubble charts, line graphs, and heat maps to analyze spatial and temporal distribution patterns of confirmed cases worldwide.
+
+Developed as a data visualization project, it highlights multi-representation geospatial analysis to enhance insight extraction from large-scale global health data.
+`,
+  images: [
+    "/images/projects/tableau-covid.png"
+  ],
+  category: "Data Visualization",
+  tools: [
+    "Tableau",
+    "Choropleth Mapping",
+    "Spatial Analysis",
+    "Data Visualization",
+    "Thematic Mapping"
+  ],
+  links: [
+          {
+        label: "Tableau",
+        url: "https://public.tableau.com/app/profile/nisa.amelia/viz/PraktikumVDS-NisaAmelia-21483034SV20055-B-PetaCovid-19Terkonfirmasi/Dashboard1",
+        type: "demo"
+      },
+  ]
+}
 ]
 
 export const galleryData: GalleryItem[] = [
