@@ -23,9 +23,11 @@ const GalleryCard = ({
       {/* Image Container */}
       <div className="relative h-56 bg-zinc-800 overflow-hidden">
         
-        {/* Skeleton */}
+        {/* Skeleton + Shimmer */}
         {!isLoaded && (
-          <div className="absolute inset-0 bg-zinc-800 animate-pulse" />
+          <div className="absolute inset-0 bg-zinc-800 overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-zinc-600/20 to-transparent animate-shimmer" />
+          </div>
         )}
 
         <img
@@ -34,8 +36,8 @@ const GalleryCard = ({
           loading="lazy"
           decoding="async"
           onLoad={() => setIsLoaded(true)}
-          className={`w-full h-full object-cover transition-opacity duration-500 ${
-            isLoaded ? 'opacity-100' : 'opacity-0'
+          className={`w-full h-full object-cover transition-all duration-500 ${
+            isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
           }`}
         />
       </div>
