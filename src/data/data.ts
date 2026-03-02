@@ -18,7 +18,7 @@ import covidImg from "../assets/images/projects/tableau-covid.png"
 // ======================
 // IMPORT GALLERY IMAGES
 // ======================
-import sakalaImg from "../assets/images/gallery/sakala.png"
+import sakalaImg from "../assets/images/gallery/sakala_2.png"
 import sakala2Img from "../assets/images/gallery/sakala.png"
 import kknImg from "../assets/images/gallery/kkn.png"
 import bangkitGalleryImg from "../assets/images/gallery/bangkit.png"
