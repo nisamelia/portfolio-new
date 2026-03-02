@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
 
 interface GalleryCardProps {
   image: string
@@ -14,56 +14,30 @@ const GalleryCard = ({
   onClick
 }: GalleryCardProps) => {
   const [isLoaded, setIsLoaded] = useState(false)
-  const [shouldLoad, setShouldLoad] = useState(false)
-  const cardRef = useRef<HTMLDivElement>(null)
-
-  // Intersection Observer untuk lazy load
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setShouldLoad(true)
-          observer.disconnect()
-        }
-      },
-      { rootMargin: '50px' } // load 50px sebelum visible
-    )
-
-    if (cardRef.current) {
-      observer.observe(cardRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
 
   return (
     <div
-      ref={cardRef}
       onClick={onClick}
-      className="group cursor-pointer bg-zinc-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+      className="group cursor-pointer bg-zinc-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
     >
       {/* Image Container */}
-      <div className="relative overflow-hidden h-56 bg-zinc-800">
-        {/* Loading Skeleton */}
-        {!isLoaded && (
-          <div className="absolute inset-0 bg-linear-to-br from-zinc-800 via-zinc-700 to-zinc-800 animate-pulse">
-            <div className="absolute inset-0 bg-linear-to-r from-transparent via-zinc-600/20 to-transparent animate-shimmer" />
-          </div>
-        )}
+      <div className="relative h-56 bg-zinc-800 overflow-hidden">
         
-        {/* Image - hanya load kalau sudah visible */}
-        {shouldLoad && (
-          <img
-            src={image}
-            alt={title}
-            loading="lazy"
-            decoding="async"
-            onLoad={() => setIsLoaded(true)}
-            className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-105 ${
-              isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-            }`}
-          />
+        {/* Skeleton */}
+        {!isLoaded && (
+          <div className="absolute inset-0 bg-zinc-800 animate-pulse" />
         )}
+
+        <img
+          src={image}
+          alt={title}
+          loading="lazy"
+          decoding="async"
+          onLoad={() => setIsLoaded(true)}
+          className={`w-full h-full object-cover transition-opacity duration-500 ${
+            isLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
+        />
       </div>
 
       {/* Content */}
