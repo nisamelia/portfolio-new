@@ -1,3 +1,5 @@
+import { useState, useEffect, useRef } from 'react'
+
 interface Props {
   title: string
   description: string
@@ -16,6 +18,9 @@ const ProjectCard = ({
   tools,
   onClick
 }: Props) => {
+  const [isLoaded, setIsLoaded] = useState(false)
+  const [shouldLoad, setShouldLoad] = useState(false)
+  const cardRef = useRef<HTMLDivElement>(null)
 
   const visibleTags = tools.slice(0, MAX_VISIBLE_TAGS)
   const remainingTags = tools.slice(MAX_VISIBLE_TAGS)
@@ -27,8 +32,28 @@ const ProjectCard = ({
 
   const previewImage = images?.[0]
 
+  // Intersection Observer untuk lazy load
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setShouldLoad(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: '100px' } // load 100px sebelum visible
+    )
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <div
+      ref={cardRef}
       onClick={onClick}
       className="
         group cursor-pointer
@@ -43,26 +68,39 @@ const ProjectCard = ({
         hover:border-zinc-600
       "
     >
-
       {/* Image Preview */}
       {previewImage && (
-        <div className="relative overflow-hidden">
-          <img
-            src={previewImage}
-            alt={title}
-            loading="lazy"
-            className="
-              w-full h-52 object-cover
-              transition-transform duration-500
-              group-hover:scale-105
-            "
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+        <div className="relative overflow-hidden h-52 bg-zinc-800">
+          {/* Loading Skeleton */}
+          {!isLoaded && (
+            <div className="absolute inset-0 bg-gradient-to-br from-zinc-800 via-zinc-700 to-zinc-800 animate-pulse">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-zinc-600/20 to-transparent animate-shimmer" />
+            </div>
+          )}
+
+          {/* Actual Image */}
+          {shouldLoad && (
+            <>
+              <img
+                src={previewImage}
+                alt={title}
+                loading="lazy"
+                decoding="async"
+                onLoad={() => setIsLoaded(true)}
+                className={`
+                  w-full h-full object-cover
+                  transition-all duration-700
+                  group-hover:scale-105
+                  ${isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}
+                `}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+            </>
+          )}
         </div>
       )}
 
       <div className="p-6">
-
         {/* Title */}
         <h3 className="
           text-xl font-semibold mb-4
@@ -102,6 +140,7 @@ const ProjectCard = ({
                   text-white/60
                   border border-white/10
                   rounded-full
+                  cursor-help
                 "
               >
                 +{remainingTags.length}
@@ -119,6 +158,7 @@ const ProjectCard = ({
                   shadow-xl
                   whitespace-nowrap
                   z-20
+                  pointer-events-none
                 "
               >
                 {remainingTags.join(" • ")}
@@ -139,7 +179,6 @@ const ProjectCard = ({
             </>
           )}
         </p>
-
       </div>
     </div>
   )
