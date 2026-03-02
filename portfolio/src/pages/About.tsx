@@ -47,7 +47,7 @@ const About = () => {
             </h3>
 
             <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
-              <p className="text-gray-400">• <span className="text-white">GIS Analysis</span></p>
+              <p className="text-gray-400">• <span className="text-white">Cartography</span></p>
               <p className="text-gray-400">• <span className="text-white">Spatial Modeling</span></p>
               <p className="text-gray-400">• <span className="text-white">GIS Programming</span></p>
               <p className="text-gray-400">• <span className="text-white">Geospatial Data Engineering</span></p>

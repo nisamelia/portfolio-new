@@ -124,7 +124,7 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          GIS Analyst & WebGIS Developer
+          GIS Engineer & Cartographer
         </motion.h1>
 
         {/* ✨ Smooth Animated Description */}
