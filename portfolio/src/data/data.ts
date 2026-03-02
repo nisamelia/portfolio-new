@@ -1,47 +1,49 @@
 import type { Project, GalleryItem } from "../types/types.ts"
 
+// ======================
+// IMPORT PROJECT IMAGES
+// ======================
+import benthicImg from "../assets/images/projects/gee-benthic.png"
+import groundwaterImg from "../assets/images/projects/arcgis-airtanah.png"
+import slopeImg from "../assets/images/projects/arcgis-slope.png"
+import mangroveImg from "../assets/images/projects/envi-mangrove.png"
+import turbidityImg from "../assets/images/projects/gee-tss.png"
+import archaeositeImg from "../assets/images/projects/archaeosite.png"
+import gesturoImg from "../assets/images/projects/gesturo.png"
+import sentimapImg from "../assets/images/projects/python-sentimap.png"
+import retailImg from "../assets/images/projects/python-retailexp.png"
+import webgisImg from "../assets/images/projects/webgis-makmur.png"
+import covidImg from "../assets/images/projects/tableau-covid.png"
+
+// ======================
+// IMPORT GALLERY IMAGES
+// ======================
+import sakalaImg from "../assets/images/gallery/sakala.png"
+import sakala2Img from "../assets/images/gallery/sakala_2.jpg"
+import kknImg from "../assets/images/gallery/kkn.png"
+import bangkitGalleryImg from "../assets/images/gallery/bangkit.png"
+
 export const projects: Project[] = [
   {
     id: 1,
     title: "Tentative Benthic Habitat Mapping – Sagori Island",
-    description: `
-This project mapped benthic habitats around Sagori Island (Teluk Bone) 
-using Sentinel-2 MSI imagery processed in Google Earth Engine 
-and classified with the Random Forest algorithm.
-
-Training variables were defined by sampling 80% ROI data 
-for Random Forest, while 20% were used for testing. 
-The model used 2,541 training samples and 953 testing samples, 
-achieving an overall accuracy of 90.5%.
-
-The final map classifies land, open water, coral reefs, macroalgae, 
-sand, and seagrass, demonstrating the effectiveness of machine learning 
-for coastal habitat mapping and marine monitoring.
-`,
-    images: [
-      "/images/projects/gee-benthic.png",
-    ],
+    description: `...`,
+    images: [benthicImg],
     category: "GIS and Remote Sensing",
     tools: ["GEE", "Random Forest", "Sentinel-2", "Environment"],
     links: [
       {
         label: "Google Earth Engine",
-        url: "https://www.google.com/url?sa=D&q=https://code.earthengine.google.com/15ed40afd349e0c05778f6fd914e58f7&ust=1772344518450691&usg=AOvVaw0jk9x-OnUkkQ3eKXCVlXHh",
+        url: "https://code.earthengine.google.com/15ed40afd349e0c05778f6fd914e58f7",
         type: "gee"
-      },
+      }
     ]
   },
   {
     id: 2,
     title: "Goundwater Level Map – Yogyakarta City",
-    description: `
-This project analyzes groundwater flow direction using the Spherical Kriging interpolation method to model spatial variations in groundwater levels. Point-based groundwater measurements were interpolated to generate a continuous surface, from which hydraulic gradients and flow directions were derived.
-
-The output map visualizes groundwater flow patterns across the study area, supporting hydrogeological analysis, water resource management, and environmental planning. The project demonstrates skills in geostatistical interpolation (Kriging), spatial analysis, and cartographic visualization using GIS tools.
-`,
-    images: [
-      "/images/projects/arcgis-airtanah.png",
-    ],
+    description: `...`,
+    images: [groundwaterImg],
     category: "GIS and Remote Sensing",
     tools: ["ArcGIS", "Kriging", "Interpolation", "Hydrology"],
     links: []
@@ -49,97 +51,56 @@ The output map visualizes groundwater flow patterns across the study area, suppo
   {
     id: 3,
     title: "Slope Map – Tinalah Watershed",
-    description: `
-This project presents a slope classification map of the Tinalah Watershed (DAS Tinalah) derived from Digital Elevation Model (DEM) data. Slope values were calculated to analyze terrain steepness and classify the area into multiple slope categories.
-
-The analysis identifies variations in terrain from flat to steep areas, supporting applications such as watershed management, erosion risk assessment, land suitability analysis, and spatial planning.
-
-This project demonstrates skills in terrain analysis (DEM processing), slope derivation, spatial classification, and cartographic visualization using GIS tools.
-`,
-    images: [
-      "/images/projects/arcgis-slope.png",
-    ],
+    description: `...`,
+    images: [slopeImg],
     category: "GIS and Remote Sensing",
     tools: ["ArcGIS", "Slope", "DEM", "Hydrology"],
     links: []
   },
-
   {
     id: 4,
     title: "Mangrove Land Cover Classification – Segara Anakan, Cilacap",
-    description: `
-This project maps mangrove ecosystem land cover in Segara Anakan, Cilacap using a Supervised Classification approach based on satellite imagery.
-
-Training samples (ROI) were defined for each land cover class, including water bodies, agricultural land, built-up areas, high-, medium-, and low-density mangroves, and non-mangrove vegetation. The supervised classification algorithm was then applied to generate a detailed land cover map of the mangrove ecosystem.
-
-The output supports coastal ecosystem monitoring, mangrove density assessment, and environmental management planning.
-
-This project demonstrates skills in remote sensing analysis, supervised classification, ROI sampling, land cover mapping, and GIS-based cartographic visualization.
-`,
-    images: [
-      "/images/projects/envi-mangrove.png",
-    ],
+    description: `...`,
+    images: [mangroveImg],
     category: "GIS and Remote Sensing",
     tools: ["ENVI", "Supervised Classification", "Land Cover", "Landsat 8", "Ecosystem"],
     links: []
   },
-
   {
     id: 5,
     title: "Mangrove Land Cover Classification – Segara Anakan, Cilacap",
-    description: `
-This project presents a spatial analysis of water turbidity in Gajah Mungkur Reservoir using the Zhao algorithm applied to Sentinel-2A satellite imagery (2023).
-
-The data were processed in Google Earth Engine, including cloud masking and compositing, to generate a turbidity distribution map.
-
-The result visualizes spatial variations in water clarity to support reservoir water quality monitoring and environmental management.
-`,
-    images: [
-      "/images/projects/gee-tss.png",
-    ],
+    description: `...`,
+    images: [turbidityImg],
     category: "GIS and Remote Sensing",
     tools: ["GEE", "Total Solid Suspense", "Environment", "Sentinel-2"],
-    links: [{
-      label: "Google Earth Engine",
-      url: "https://code.earthengine.google.com/39bbf4bf7a93c69d97c3f80c50986d56",
-      type: "gee"
-    },]
+    links: [
+      {
+        label: "Google Earth Engine",
+        url: "https://code.earthengine.google.com/39bbf4bf7a93c69d97c3f80c50986d56",
+        type: "gee"
+      }
+    ]
   },
-
   {
     id: 6,
     title: "Archaeosite Mobile App - Yogyakarta Special Region",
-    description: `
-Achaeosite is a React Native–based mobile application that visualizes archaeological sites in the Special Region of Yogyakarta through an interactive geospatial map interface. 
-
-The app enables users to explore site locations, view spatial information, and generate routes for navigation purposes. 
-
-It also supports user-contributed data input, allowing users to add new archaeological points with latitude and longitude coordinates directly within the application.
-`,
-    images: [
-      "/images/projects/archaeosite.png",
-    ],
+    description: `...`,
+    images: [archaeositeImg],
     category: "Web and Application",
     tools: ["React Native", "Javascript", "Mobile App", "Leaflet JS", "Bootstrap"],
-    links: [{
-      label: "GitHub",
-      url: "https://github.com/nisamelia/archaeo-sites-3",
-      type: "github"
-    },]
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/nisamelia/archaeo-sites-3",
+        type: "github"
+      }
+    ]
   },
   {
     id: 7,
     title: "Gesturo – Bangkit Capstone Project",
-    description: `
-Gesturo is a sign language learning mobile application developed using Kotlin in Android Studio, with UI/UX designed in Figma.
-
-Built as a collaborative capstone project, the app integrates machine learning models for real-time gesture recognition and utilizes cloud computing services for model deployment and data processing.
-
-The development was carried out in cross-functional collaboration with Machine Learning and Cloud Computing cohorts to deliver an intelligent, scalable, and accessible learning platform.
-`,
-    images: [
-      "/images/projects/gesturo.png",
-    ],
+    description: `...`,
+    images: [gesturoImg],
     category: "Web and Application",
     tools: ["Kotlin", "Android Studio", "Figma", "Machine Learning"],
     links: [
@@ -147,23 +108,14 @@ The development was carried out in cross-functional collaboration with Machine L
         label: "GitHub",
         url: "https://github.com/gesturo-team/Mobile-Development",
         type: "github"
-      },
+      }
     ]
   },
-
   {
     id: 8,
     title: "SentiMapJogja – Tourism Sentiment Analysis Dashboard",
-    description: `
-SentiMapJogja is an undergraduate thesis project focused on mapping public sentiment toward tourism destinations in the Special Region of Yogyakarta (2023) using Twitter data.
-
-The project was developed using Python and visualized through an interactive Streamlit dashboard. A lexicon-based sentiment analysis approach was applied to more than 25,000 collected tweets, resulting in 2,685 cleaned and processed data points for final analysis.
-
-The platform presents sentiment distribution and spatial insights to support data-driven understanding of tourism perception in the region.
-`,
-    images: [
-      "/images/projects/python-sentimap.png",
-    ],
+    description: `...`,
+    images: [sentimapImg],
     category: "Data Science",
     tools: ["Python", "Streamlit", "Sentiment Analysis", "Lexicon-Based Method", "Data Mining"],
     links: [
@@ -174,20 +126,11 @@ The platform presents sentiment distribution and spatial insights to support dat
       }
     ]
   },
-
   {
     id: 9,
     title: "Retail Expansion Analysis – OKU vs South Tangerang",
-    description: `
-This project analyzes retail expansion potential between Ogan Komering Ulu (OKU) Regency and South Tangerang City using a grid-based spatial approach as the core analytical framework.
-
-Multiple geospatial datasets were integrated, including World Settlement Footprint (WSF), OpenStreetMap (OSM) building data, Google Earth Engine catalog imagery, official RTRW spatial plans (South Tangerang via geoportal and OKU digitized from published maps), Ina-Geoportal road data, and BPS population statistics. A dasymetric mapping technique was applied to redistribute population data using building footprints and NDBI to produce a more realistic population density surface.
-
-The suitability model incorporates key parameters such as flood risk, road buffer accessibility, built-up intensity, and compliance with local spatial planning regulations, resulting in a spatially explicit retail potential map to support location-based decision-making.
-`,
-    images: [
-      "/images/projects/python-retailexp.png",
-    ],
+    description: `...`,
+    images: [retailImg],
     category: "Data Science",
     tools: [
       "Data Science",
@@ -211,93 +154,69 @@ The suitability model incorporates key parameters such as flood risk, road buffe
       }
     ]
   },
-
   {
-  id: 10,
-  title: "WebGIS – Restaurant Distribution Map of East Java",
-  description: `
-This project is an interactive WebGIS application designed to visualize the spatial distribution of restaurants across East Java.
-
-The system integrates geospatial mapping, tabular data management, and dashboard visualization, enabling users to explore restaurant locations, view attribute information, and manage data entries dynamically. The platform includes interactive maps, statistical charts, and a structured database table interface.
-
-Built as a full-stack geospatial web application, it demonstrates spatial data visualization, CRUD functionality, and web-based GIS implementation for regional-level analysis.
-`,
-  images: [
-    "/images/projects/webgis-makmur.png"
-  ],
-  category: "Web and Application",
-  tools: [
-    "Leaflet",
-    "PHP",
-    "Bootstrap",
-    "PostGIS",
-    "CodeIgniter",
-    "WebGIS Development"
-  ],
-  links: [
-          {
+    id: 10,
+    title: "WebGIS – Restaurant Distribution Map of East Java",
+    description: `...`,
+    images: [webgisImg],
+    category: "Web and Application",
+    tools: ["Leaflet", "PHP", "Bootstrap", "PostGIS", "CodeIgniter", "WebGIS Development"],
+    links: [
+      {
         label: "GitHub",
         url: "https://github.com/nisamelia/RM-Jawa-Timur",
         type: "github"
-      },
-  ]
-},
-{
-  id: 11,
-  title: "Global COVID-19 Confirmed Cases Dashboard (2020)",
-  description: `
-This project presents a global visualization dashboard of confirmed COVID-19 cases in 2020 using multiple thematic and statistical mapping techniques.
-
-The dashboard includes treemap charts, choropleth maps, proportional symbol maps, packed bubble charts, line graphs, and heat maps to analyze spatial and temporal distribution patterns of confirmed cases worldwide.
-
-Developed as a data visualization project, it highlights multi-representation geospatial analysis to enhance insight extraction from large-scale global health data.
-`,
-  images: [
-    "/images/projects/tableau-covid.png"
-  ],
-  category: "Data Visualization",
-  tools: [
-    "Tableau",
-    "Choropleth Mapping",
-    "Spatial Analysis",
-    "Data Visualization",
-    "Thematic Mapping"
-  ],
-  links: [
-          {
+      }
+    ]
+  },
+  {
+    id: 11,
+    title: "Global COVID-19 Confirmed Cases Dashboard (2020)",
+    description: `...`,
+    images: [covidImg],
+    category: "Data Visualization",
+    tools: [
+      "Tableau",
+      "Choropleth Mapping",
+      "Spatial Analysis",
+      "Data Visualization",
+      "Thematic Mapping"
+    ],
+    links: [
+      {
         label: "Tableau",
         url: "https://public.tableau.com/app/profile/nisa.amelia/viz/PraktikumVDS-NisaAmelia-21483034SV20055-B-PetaCovid-19Terkonfirmasi/Dashboard1",
         type: "demo"
-      },
-  ]
-}
+      }
+    ]
+  }
 ]
 
 export const galleryData: GalleryItem[] = [
   {
     id: 1,
-    image: "/images/gallery/sakala.png",
+    image: sakalaImg,
     title: "(ง •̀_•́)ง Dassa Internship",
     date: "December 2025"
   },
   {
     id: 2,
-    image: "/images/gallery/sakala_2.JPG",
+    image: sakala2Img,
     title: "(ﾉ◕ヮ◕)ﾉ MRV Platform Launch",
     date: "December 2025"
   },
   {
     id: 3,
-    image: "/images/gallery/kkn.png",
+    image: kknImg,
     title: "(づ｡◕‿‿◕｡)づ Community Service – Demak",
     date: "July 2024"
   },
   {
     id: 4,
-    image: "/images/gallery/bangkit.png",
+    image: bangkitGalleryImg,
     title: "(•̀ᴗ•́)و Bangkit Capstone Project",
     date: "April 2024"
-  },
+  }
 ]
 
 export interface Experience {
