@@ -73,8 +73,8 @@ const ProjectCard = ({
         <div className="relative overflow-hidden h-52 bg-zinc-800">
           {/* Loading Skeleton */}
           {!isLoaded && (
-            <div className="absolute inset-0 bg-gradient-to-br from-zinc-800 via-zinc-700 to-zinc-800 animate-pulse">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-zinc-600/20 to-transparent animate-shimmer" />
+            <div className="absolute inset-0 bg-linear-to-br from-zinc-800 via-zinc-700 to-zinc-800 animate-pulse">
+              <div className="absolute inset-0 bg-linear-to-r from-transparent via-zinc-600/20 to-transparent animate-shimmer" />
             </div>
           )}
 
@@ -94,7 +94,7 @@ const ProjectCard = ({
                   ${isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}
                 `}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
             </>
           )}
         </div>

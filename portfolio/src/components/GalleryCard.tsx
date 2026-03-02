@@ -46,8 +46,8 @@ const GalleryCard = ({
       <div className="relative overflow-hidden h-56 bg-zinc-800">
         {/* Loading Skeleton */}
         {!isLoaded && (
-          <div className="absolute inset-0 bg-gradient-to-br from-zinc-800 via-zinc-700 to-zinc-800 animate-pulse">
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-zinc-600/20 to-transparent animate-shimmer" />
+          <div className="absolute inset-0 bg-linear-to-br from-zinc-800 via-zinc-700 to-zinc-800 animate-pulse">
+            <div className="absolute inset-0 bg-linear-to-r from-transparent via-zinc-600/20 to-transparent animate-shimmer" />
           </div>
         )}
         
