@@ -63,7 +63,7 @@ const About = () => {
 
             <div className="flex flex-wrap gap-6">
               <a
-                href="mailto:your@email.com"
+                href="mailto:nisaamelia952@gmail.com"
                 className="flex items-center gap-3 px-4 py-2 rounded-lg 
                            bg-white/5 hover:bg-white/10 
                            text-gray-300 hover:text-white 
@@ -74,7 +74,7 @@ const About = () => {
               </a>
 
               <a
-                href="https://linkedin.com/in/yourusername"
+                href="https://www.linkedin.com/in/nisa-amelia31/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 px-4 py-2 rounded-lg 
@@ -87,7 +87,7 @@ const About = () => {
               </a>
 
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/nisamelia"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 px-4 py-2 rounded-lg 
