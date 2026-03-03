@@ -14,6 +14,8 @@ import sentimapImg from "../assets/images/projects/python-sentimap.png"
 import retailImg from "../assets/images/projects/python-retailexp.png"
 import webgisImg from "../assets/images/projects/webgis-makmur.png"
 import covidImg from "../assets/images/projects/tableau-covid.png"
+import hansenImg from "../assets/images/projects/hansen-forest.png"
+import hotspotImg from "../assets/images/projects/mann-kendal.png"
 
 // ======================
 // IMPORT GALLERY IMAGES
@@ -240,7 +242,53 @@ Developed as a data visualization project, it highlights multi-representation ge
         type: "demo"
       }
     ]
-  }
+  },
+  {
+  id: 12,
+  title: "Hotspot Trend Analysis – Kalimantan (Mann-Kendall)",
+  description: `
+This project analyzes long-term fire hotspot trends across Kalimantan using the non-parametric Mann–Kendall trend test to detect monotonic changes over time.
+
+Hotspot data were pre-processed and managed in QGIS, including spatial filtering, grid-based aggregation, and training sample preparation. The statistical trend analysis and modeling were performed in R to identify significant increasing or decreasing fire activity patterns.
+
+The output map visualizes statistically significant hotspot trends, supporting environmental monitoring, fire risk assessment, and regional land management strategies.
+
+This project demonstrates integration between desktop GIS (QGIS) for spatial data engineering and R for statistical modeling and geospatial machine learning workflows.
+`,
+  images: [hotspotImg],
+  category: "Data Science",
+  tools: [
+    "QGIS",
+    "R",
+    "Mann-Kendall Test",
+    "Spatial Analysis",
+    "Environmental Monitoring"
+  ],
+  links: []
+},
+{
+  id: 13,
+  title: "Hansen Global Forest Change Processing – Indonesia",
+  description: `
+This project processed Hansen Global Forest Change datasets by merging multiple global grid tiles into a seamless national-scale forest layer for Indonesia.
+
+All raster grids were mosaicked and managed using QGIS, followed by visualization enhancement and reclassification for forest cover interpretation. The processed dataset was then converted into Cloud Optimized GeoTIFF (COG) format to enable efficient web-based visualization and scalable WebGIS deployment.
+
+The workflow optimized raster storage, reduced file redundancy, and improved loading performance for web mapping applications.
+
+This project demonstrates advanced raster processing, large-scale geospatial data management, and preparation of analysis-ready datasets for WebGIS environments.
+`,
+  images: [hansenImg],
+  category: "GIS and Remote Sensing",
+  tools: [
+    "QGIS",
+    "Raster Mosaicking",
+    "COG Conversion",
+    "GeoTIFF Optimization",
+    "WebGIS"
+  ],
+  links: []
+}
 ]
 
 export const galleryData: GalleryItem[] = [
