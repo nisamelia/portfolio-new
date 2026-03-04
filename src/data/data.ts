@@ -292,7 +292,7 @@ This project demonstrates advanced raster processing, large-scale geospatial dat
 },
 {
   id: 14,
-  title: "Spatial-Lab — Geospatial Automation Toolkit (In Development)",
+  title: "Spatial Lab - Geospatial Automation Toolkit (In Development)",
   description: `
 Spatial-Lab is an evolving geospatial automation toolkit currently under development. It is designed as a modular platform to streamline spatial data validation, cleaning, and analysis workflows.
 
