@@ -303,7 +303,7 @@ Spatial-Lab is being built as a customizable environment that will continuously 
 This project reflects my long-term vision of building scalable, automation-driven solutions for geospatial data processing and analysis.
 `,
   images: [spalabImg],
-  category: "Geospatial Development",
+  category: "Web and Application",
   tools: [
     "Python",
     "Streamlit",
