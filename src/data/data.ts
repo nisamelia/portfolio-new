@@ -16,6 +16,7 @@ import webgisImg from "../assets/images/projects/webgis-makmur.png"
 import covidImg from "../assets/images/projects/tableau-covid.png"
 import hansenImg from "../assets/images/projects/hansen-forest.png"
 import hotspotImg from "../assets/images/projects/mann-kendal.png"
+import spalabImg from "../assets/images/projects/spatial-lab.png"
 
 // ======================
 // IMPORT GALLERY IMAGES
@@ -288,7 +289,33 @@ This project demonstrates advanced raster processing, large-scale geospatial dat
     "WebGIS"
   ],
   links: []
-}
+},
+{
+  id: 14,
+  title: "Spatial-Lab — Geospatial Automation Toolkit (In Development)",
+  description: `
+Spatial-Lab is an evolving geospatial automation toolkit currently under development. It is designed as a modular platform to streamline spatial data validation, cleaning, and analysis workflows.
+
+The first core feature, GeoClean, focuses on automated spatial data quality control, including coordinate validation, null detection, duplicate removal, boundary verification, and export-ready outputs (CSV & GeoJSON) with interactive visualization support.
+
+Spatial-Lab is being built as a customizable environment that will continuously expand with new geospatial tools tailored to real-world project needs and workflow efficiency.
+
+This project reflects my long-term vision of building scalable, automation-driven solutions for geospatial data processing and analysis.
+`,
+  images: [spalabImg],
+  category: "Geospatial Development",
+  tools: [
+    "Python",
+    "Streamlit",
+    "GeoPandas",
+    "Pandas",
+    "Folium",
+    "Spatial Data Validation",
+    "Geospatial Automation"
+  ],
+  links: []
+},
+
 ]
 
 export const galleryData: GalleryItem[] = [
