@@ -25,6 +25,8 @@ import sakalaImg from "../assets/images/gallery/sakala.png"
 import sakala2Img from "../assets/images/gallery/sakala_2.png"
 import kknImg from "../assets/images/gallery/kkn.png"
 import bangkitGalleryImg from "../assets/images/gallery/bangkit.png"
+import rdkImg from "../assets/images/gallery/rdk-publi.png"
+import pklImg from "../assets/images/gallery/pkl-2.png"
 
 export const projects: Project[] = [
   {
@@ -342,6 +344,18 @@ export const galleryData: GalleryItem[] = [
     image: bangkitGalleryImg,
     title: "(•̀ᴗ•́)و Bangkit Capstone Project",
     date: "April 2024"
+  }, 
+  {
+    id: 5,
+    image: pklImg,
+    title: "◝(ᵔᗜᵔ)◜ Field Work Practice 2 - Ngaliyan Gunung A",
+    date: "July 2023"
+  },
+  {
+    id: 6,
+    image: rdkImg,
+    title: "( ദ്ദി ˙ᗜ˙ ) Publication Team - RDK UGM 1444 H",
+    date: "2023"
   }
 ]
 
