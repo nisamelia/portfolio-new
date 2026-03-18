@@ -17,6 +17,7 @@ import covidImg from "../assets/images/projects/tableau-covid.png"
 import hansenImg from "../assets/images/projects/hansen-forest.png"
 import hotspotImg from "../assets/images/projects/mann-kendal.png"
 import spalabImg from "../assets/images/projects/spatial-lab.png"
+import landuseImg from "../assets/images/projects/land_use.png"
 
 // ======================
 // IMPORT GALLERY IMAGES
@@ -314,6 +315,26 @@ This project reflects my long-term vision of building scalable, automation-drive
     "Folium",
     "Spatial Data Validation",
     "Geospatial Automation"
+  ],
+  links: []
+},
+
+{
+  id: 15,
+  title: "Special Region of Yogyakarta - Land Use Mapping (2022)",
+  description: `
+Conducted land use/land cover classification using satellite imagery to support spatial analysis within the “PETARUNG” project. Applied a supervised classification approach using ENVI to classify land cover types, achieving an overall accuracy of 86%.
+
+The workflow included image preprocessing, training sample selection, and classification, followed by accuracy assessment. Field survey (ground truth) data were collected and used to validate the classification results, ensuring reliability and consistency.
+
+This project demonstrates the application of remote sensing techniques and image processing tools in producing accurate and validated land cover information for real-world geospatial analysis.
+`,
+  images: [landuseImg],
+  category: "GIS and Remote Sensing",
+  tools: [
+    "ENVI",
+    "Land Use",
+    "Supervised Classification",
   ],
   links: []
 },
