@@ -8,7 +8,7 @@ import {
 interface ProjectLink {
   label: string
   url: string
-  type: "github" | "streamlit" | "arcgis" | "gee" | "demo"
+  type: "github" | "streamlit" | "arcgis" | "gee" | "demo" | "others"
 }
 
 interface Props {
