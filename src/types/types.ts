@@ -7,7 +7,7 @@ export type Category =
   export interface ProjectLink {
   label: string
   url: string
-  type: "github" | "streamlit" | "arcgis" | "gee" | "demo" | "other"
+  type: "github" | "streamlit" | "arcgis" | "gee" | "demo" | "others"
 }
 
 export interface Project {

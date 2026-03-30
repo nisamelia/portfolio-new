@@ -172,7 +172,7 @@ The platform presents sentiment distribution and spatial insights to support dat
       {
         label: "Hak Cipta",
         url: "https://pdki-indonesia.dgip.go.id:/link/45433030323032353136393930357c636f70797269676874",
-        type: "other"
+        type: "others"
       }
     ]
   },
