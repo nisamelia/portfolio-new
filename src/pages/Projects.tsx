@@ -16,12 +16,15 @@ const Projects = () => {
   const [selectedCategory, setSelectedCategory] =
     useState<Category>("All")
 
-  const filteredProjects =
-    selectedCategory === "All"
-      ? projects
-      : projects.filter(
-          (project) => project.category === selectedCategory
-        )
+  const filterProjects = (
+    projects: Project[],
+    category: Category
+  ): Project[] => {
+    if (category === "All") return projects
+    return projects.filter(p => p.category === category)
+  }
+
+  const filteredProjects = filterProjects(projects, selectedCategory)
 
   return (
     <section className="pt-32 pb-20 px-6 max-w-6xl mx-auto">
@@ -33,10 +36,9 @@ const Projects = () => {
             key={category}
             onClick={() => setSelectedCategory(category)}
             className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300
-              ${
-                selectedCategory === category
-                  ? "bg-white text-black"
-                  : "bg-zinc-800 text-zinc-400 hover:bg-zinc-700 hover:text-white"
+              ${selectedCategory === category
+                ? "bg-white text-black"
+                : "bg-zinc-800 text-zinc-400 hover:bg-zinc-700 hover:text-white"
               }
             `}
           >

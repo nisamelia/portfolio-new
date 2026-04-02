@@ -18,6 +18,8 @@ import hansenImg from "../assets/images/projects/hansen-forest.png"
 import hotspotImg from "../assets/images/projects/mann-kendal.png"
 import spalabImg from "../assets/images/projects/spatial-lab.png"
 import landuseImg from "../assets/images/projects/land_use.png"
+import banjirImg from "../assets/images/projects/sda-banjir.png"
+import ppkImg from "../assets/images/projects/ppk.png"
 
 // ======================
 // IMPORT GALLERY IMAGES
@@ -342,6 +344,46 @@ This project demonstrates the application of remote sensing techniques and image
     "Supervised Classification",
   ],
   links: []
+},
+
+{
+  id: 16,
+  title: "North Jakarta - Flood Prone Map (2022)",
+  description: `
+Developed a flood vulnerability analysis for North Jakarta using Sentinel-1 SAR imagery within the Google Earth Engine platform. The analysis leveraged VH polarization to identify surface moisture patterns associated with flood-prone areas.
+
+The workflow included data filtering, parameter selection, flood index calculation, and spatial visualization using cloud-based processing. The results highlighted high-risk zones, particularly in densely populated areas with inadequate drainage systems.
+
+This project demonstrates the application of cloud computing and remote sensing techniques for disaster risk assessment, providing insights to support flood mitigation and urban planning.
+`,
+  images: [banjirImg],
+  category: "GIS and Remote Sensing",
+  tools: [
+    "Google Earth Engine",
+    "Flood Mapping",
+    "Sentinel-1",
+  ],
+  links: []
+},
+
+{
+  id: 17,
+  title: "Oceanographic Characteristics Analysis – North Java Sea (2023)",
+  description: `
+Analyzed oceanographic characteristics in the North Java Sea using Copernicus Marine data to understand sea surface temperature and current patterns. The study explored how physical ocean parameters influence marine ecosystems and resource distribution.
+
+The workflow involved processing marine datasets using Ocean Data View, including parameter selection (sea surface temperature and current velocity), data extraction, and visualization. Temporal analysis was also conducted to observe seasonal variations and current circulation patterns.
+
+Results show dynamic current movements and temperature variations that support marine productivity, particularly for fisheries. This project highlights the application of marine geospatial analysis in understanding ocean dynamics and supporting sustainable coastal resource management.
+  `,
+  images: [ppkImg],
+  category: "GIS and Remote Sensing",
+  tools: [
+    "Copernicus Marine Data",
+    "Ocean Data View",
+    "Oceanographic Analysis",
+    "Data Visualization"
+  ]
 },
 
 ]
