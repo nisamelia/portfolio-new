@@ -496,7 +496,6 @@ export const experiences: Experience[] = [
     description: [
       "Collected and validated 2,000+ coordinate points of public facilities, performed geocoding, and transformed 100+ tabular datasets into structured spatial data to enhance regional geospatial databases.",
       "Digitized 14 official geoheritage sites across the Special Region of Yogyakarta and developed interactive dashboards using ArcGIS Enterprise for dynamic spatial data visualization.",
-      "Built and optimized WebGIS applications by integrating multi-source spatial datasets and improving map performance and usability.",
       "Participated in the preparation of spatial data presentations and materials for the Bhumandala Award representation of the Special Region of Yogyakarta."
     ]
   },
